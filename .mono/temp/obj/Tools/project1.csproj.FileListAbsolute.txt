@@ -1,0 +1,6 @@
+/home/lz/project1/.mono/temp/bin/Tools/project1.dll
+/home/lz/project1/.mono/temp/bin/Tools/project1.pdb
+/home/lz/project1/.mono/temp/obj/Tools/project1.csprojAssemblyReference.cache
+/home/lz/project1/.mono/temp/obj/Tools/project1.csproj.CoreCompileInputs.cache
+/home/lz/project1/.mono/temp/obj/Tools/project1.dll
+/home/lz/project1/.mono/temp/obj/Tools/project1.pdb

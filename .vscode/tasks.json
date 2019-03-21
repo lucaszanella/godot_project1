@@ -1,0 +1,18 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo Hello"
+        },
+        {
+            "label": "run Godot",
+            "type": "shell",
+            "command": "/home/lz/Godot_v3.1-stable_mono_x11_64/Godot_v3.1-stable_mono_x11.64 Node2D.cs",
+            "problemMatcher": []
+        }
+    ]
+}
