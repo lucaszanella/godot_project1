@@ -30,10 +30,12 @@ public class Player : KinematicBody2D
         velocity = new Vector2();
         if(Input.IsActionPressed("ui_right") || Input.IsKeyPressed((int)KeyList.D)) {
             velocity.x += VELOCITY;
+            (GetNode( "chicken" ) as Sprite).SetFlipH(true);
         }
         
         if(Input.IsActionPressed("ui_left") || Input.IsKeyPressed((int)KeyList.A)) {
             velocity.x -= VELOCITY;
+            (GetNode( "chicken" ) as Sprite).SetFlipH(false);
         }
         /* 
         if(Input.IsActionPressed("ui_down") || Input.IsKeyPressed((int)KeyList.S)) {
@@ -43,10 +45,12 @@ public class Player : KinematicBody2D
 
         if(Input.IsActionPressed("ui_up") || Input.IsKeyPressed((int)KeyList.W)) {
             //velocity.y -= VELOCITY;
-        }   
+            //velocity.y+=
+        }
         this.Position += velocity;
 
     
-        this.SetPosition(this.Position); 
+        //this.SetPosition(this.Position); 
+        MoveAndCollide(velocity);
   }
 }
