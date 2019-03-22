@@ -14,11 +14,17 @@ public class Player : KinematicBody2D
 
     private Vector2 GRAVITY = new  Vector2(0,20);
 
+    private Sprite target;
+
+    private double targetRotation = -Math.PI/2;
+
+    [Export]
+    float targetRadius = 400;
     const int VELOCITY = 10;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-           
+        target = ((GetNode("chicken") as Sprite).GetNode("target") as Sprite);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,17 +43,20 @@ public class Player : KinematicBody2D
             velocity.x -= VELOCITY;
             (GetNode( "chicken" ) as Sprite).SetFlipH(false);
         }
-        /* 
+        
         if(Input.IsActionPressed("ui_down") || Input.IsKeyPressed((int)KeyList.S)) {
-            velocity.y += VELOCITY;
+            targetRotation -= 0.05;
         }
-        */
+        
 
         if(Input.IsActionPressed("ui_up") || Input.IsKeyPressed((int)KeyList.W)) {
-            //velocity.y -= VELOCITY;
-            //velocity.y+=
+            targetRotation += 0.05;
         }
+        
         this.Position += velocity;
+
+        target.SetRotation((float) targetRotation);
+        target.SetPosition(new Vector2(targetRadius*(float) Math.Cos(targetRotation), targetRadius*(float) Math.Sin(targetRotation)));
 
     
         //this.SetPosition(this.Position); 
